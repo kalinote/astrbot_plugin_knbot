@@ -1,9 +1,5 @@
-# helloworld
+# KNBot Base
 
-AstrBot 插件模板
+KNBot 基础功能
 
-A template plugin for AstrBot plugin feature
-
-# 支持
-
-[帮助文档](https://astrbot.app)
+提供了一些KNBot基础功能支撑
