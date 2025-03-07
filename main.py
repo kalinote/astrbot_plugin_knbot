@@ -4,12 +4,11 @@ from astrbot.api import logger
 
 
 @register("KNBot Base", "Kalinote", "KNBot 基础功能插件", "0.1", "https://github.com/kalinote/astrbot_plugin_knbot")
-class MyPlugin(Star):
+class KNBotBase(Star):
     def __init__(self, context: Context):
         super().__init__(context)
 
-        # 首先禁用自带的沙箱python解释器工具
-        plugins = self.context.get_all_stars()
-        for plugin in plugins:
-            if plugin.name == "astrbot-python-interpreter":
-                plugin.activated = False
+        # 禁用原生提醒插件
+        self.context._star_manager.turn_off_plugin("astrbot-reminder")
+        
+
