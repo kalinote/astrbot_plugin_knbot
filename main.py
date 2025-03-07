@@ -7,3 +7,9 @@ from astrbot.api import logger
 class MyPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
+
+        # 首先禁用自带的沙箱python解释器工具
+        plugins = self.context.get_all_stars()
+        for plugin in plugins:
+            if plugin.name == "astrbot-python-interpreter":
+                plugin.activated = False
